@@ -63,7 +63,8 @@ Sample HTTP response
       
       {
          "purchasedProductSet": [{
-                     "id":1,"name":"Sugar",
+                     "id":1,
+                     "name":"Sugar",
                      "priceRsPerKg":10.0,
                      "discountPercent":10.0,
                      "quantityKg":1.0,
@@ -71,7 +72,8 @@ Sample HTTP response
                      "price":10.0
                     }, 
                     {   
-                      "id":3,"name":"Rice",
+                      "id":3,
+                      "name":"Rice",
                       "priceRsPerKg":10.0,
                       "discountPercent":20.0,
                       "quantityKg":2.0,
