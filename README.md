@@ -19,11 +19,14 @@ Download or checkout the project
 
    A]
       cd CheckoutCounterService
+      
       gradle bootRun
             
    B]
       cd CheckoutCounterService
+      
       gradle clean build
+      
       java -jar build/libs/CheckoutCounterService-0.1.0.jar
 
 
