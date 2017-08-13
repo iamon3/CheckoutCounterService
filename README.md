@@ -40,6 +40,15 @@ Open command prompt
        gradle clean build
        java -jar build/libs/CheckoutCounterService-0.1.0.jar
 
+To access the embedded in-memory h2 database console
+----------------------------------------------------
+In the browser,open
+        
+        http://localhost:8080/console
+Configure
+
+         JDBC URL: jdbc:h2:~/myDB
+and click on the "connect" button. You will be connected to myDB, where the Product table can be seen at the left meta data panel.
 
 Sample HTTP request
 -------------------
