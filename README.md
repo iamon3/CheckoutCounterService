@@ -14,15 +14,19 @@ Download or checkout the project
    git clone https://github.com/iamon3/CheckoutCounterService.git
     
     
-2 ways to run the service. Open command prompt
-----------------------------------------------
+2 ways to run the service. 
+--------------------------
 
-   A]
+Open command prompt
+
+   A] First Option 
+   
       cd CheckoutCounterService
       
       gradle bootRun
             
-   B]
+   B] Second Option
+   
       cd CheckoutCounterService
       
       gradle clean build
