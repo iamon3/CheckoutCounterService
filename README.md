@@ -1,5 +1,15 @@
 # CheckoutCounterService
-Sample RESTful service developed using Spring Boot, JPA, embedded h2 database.
+
+This is sample RESTful service that implments a checkout counter for an online retail store that
+scans products and generates an itemized bill. The bill has total cost of all the products, the applicable sales tax for each product, total sales tax, and purchased items (products) description.
+
+Sales tax varies based on the type of products
+
+    category A products carry a levy of 10%
+    category B products carry a levy of 20%
+    category C products carry no levy
+
+This RESTful service is developed using Spring Boot, JPA, embedded h2 database.
 
 Please refer : https://spring.io/guides
 
@@ -22,7 +32,7 @@ Currently it has entries for 3 products
     INSERT INTO Product(id, name, category, price) values(1,'Sugar','A', 10);
     INSERT INTO Product(id, name, category, price) values(2,'Wheat','B', 20);
     INSERT INTO Product(id, name, category, price) values(3,'Rice','B', 10);
-Add more entries similarly, with id the incresing sequesnce.
+Add similar entries, with id in the incresing sequesnce.
 
 2 ways to run the service. 
 --------------------------
