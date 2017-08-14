@@ -17,6 +17,16 @@ public class Product {
 	@Enumerated(EnumType.STRING)
 	private Category category;
 	
+	public Product(){
+	}
+	
+	public Product(Long id, String name, Category category, Float price) {
+		this.id = id;
+		this.name = name;
+		this.category = category;
+		this.price = price;
+	}
+	
 	public Category getCategory() {
 		return category;
 	}

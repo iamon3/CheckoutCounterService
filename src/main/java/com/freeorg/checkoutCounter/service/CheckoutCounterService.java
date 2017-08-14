@@ -16,6 +16,13 @@ public class CheckoutCounterService {
 	@Autowired
 	private ProductRepository productRepository;
 
+	public CheckoutCounterService(){	
+	}
+	
+	public CheckoutCounterService(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+
 	public GeneratedBill generateBill(List<PurchasedProduct> purchasedProductsList) {
 		GeneratedBill generatedBill = new GeneratedBill();
 		for(PurchasedProduct purchasedProduct: purchasedProductsList){
