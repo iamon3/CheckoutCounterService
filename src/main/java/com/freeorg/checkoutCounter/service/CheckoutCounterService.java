@@ -16,9 +16,6 @@ public class CheckoutCounterService {
 	@Autowired
 	private ProductRepository productRepository;
 
-	public CheckoutCounterService(){	
-	}
-	
 	public CheckoutCounterService(ProductRepository productRepository) {
 		this.productRepository = productRepository;
 	}

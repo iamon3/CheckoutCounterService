@@ -7,11 +7,11 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.skyscreamer.jsonassert.JSONAssert;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -26,21 +26,19 @@ import com.freeorg.checkoutCounter.service.CheckoutCounterService;
 @RunWith(SpringRunner.class)
 public class CheckoutCounterControllerTest {
 
-	@MockBean
 	private CheckoutCounterService mockCheckoutCounterScervice;
+	private MockMvc mockMvc;
+	private MediaType contentType;
 
-	private MockMvc mockMvc = MockMvcBuilders.standaloneSetup(new CheckoutCounterController(){
-		@Override
-		public CheckoutCounterService getCheckoutCounterService(){
-			return mockCheckoutCounterScervice;
-		}
-	}).build();
-
-	private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(),
-			MediaType.APPLICATION_JSON.getSubtype(),
-			Charset.forName("utf8"));
-
-
+	@Before
+    public void setUp() {
+		mockCheckoutCounterScervice = Mockito.mock(CheckoutCounterService.class);
+		mockMvc = MockMvcBuilders.standaloneSetup(new CheckoutCounterController(mockCheckoutCounterScervice)).build();
+		contentType = new MediaType(MediaType.APPLICATION_JSON.getType(),
+				MediaType.APPLICATION_JSON.getSubtype(),
+				Charset.forName("utf8"));
+	}
+	
 	@Test
 	public void generateBill() throws Exception{
 		// Given

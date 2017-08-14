@@ -17,13 +17,13 @@ public class CheckoutCounterController {
 	
 	@Autowired
 	private CheckoutCounterService checkoutCounterService;
-
+	
+	public CheckoutCounterController(CheckoutCounterService checkoutCounterScervice) {
+		this.checkoutCounterService = checkoutCounterScervice;
+	}
+	
 	@RequestMapping(value="/bills", method = RequestMethod.POST)
 	public GeneratedBill generateBill(@RequestBody List<PurchasedProduct> purchasedProductsList){
-		return getCheckoutCounterService().generateBill(purchasedProductsList);
-	}
-	// TODO For the test case, this method was needed. Try to get rid of this.
-	public CheckoutCounterService getCheckoutCounterService(){
-		return this.checkoutCounterService;
+		return checkoutCounterService.generateBill(purchasedProductsList);
 	}
 }
