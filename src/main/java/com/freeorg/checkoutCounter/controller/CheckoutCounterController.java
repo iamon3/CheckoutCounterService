@@ -20,6 +20,10 @@ public class CheckoutCounterController {
 
 	@RequestMapping(value="/bills", method = RequestMethod.POST)
 	public GeneratedBill generateBill(@RequestBody List<PurchasedProduct> purchasedProductsList){
-		return checkoutCounterService.generateBill(purchasedProductsList);
+		return getCheckoutCounterService().generateBill(purchasedProductsList);
+	}
+	// TODO For the test case, this method was needed. Try to get rid of this.
+	public CheckoutCounterService getCheckoutCounterService(){
+		return this.checkoutCounterService;
 	}
 }

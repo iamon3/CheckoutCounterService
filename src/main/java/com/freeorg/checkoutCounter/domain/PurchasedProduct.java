@@ -6,10 +6,18 @@ public class PurchasedProduct {
 	private String name;
 	private Float priceRsPerKg;
 	private Float discountPercent;
-	private Float qunatityKg;
+	private Float quantityKg;
 
 	private Float discountedPrice;
 	
+	public PurchasedProduct(){		
+	}
+	
+	public PurchasedProduct(Long id, Float quantityKg) {
+		this.id = id;
+		this.quantityKg = quantityKg;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -19,8 +27,8 @@ public class PurchasedProduct {
 		return id.hashCode();
 	}
 	
-	public void setQunatityKg(Float qunatityKg) {
-		this.qunatityKg = qunatityKg;
+	public void setQuantityKg(Float qunatityKg) {
+		this.quantityKg = qunatityKg;
 	}
 	
 	public void setPrice(Float priceRsPerKg) {
@@ -29,7 +37,7 @@ public class PurchasedProduct {
 	
 	public void setDiscountPercent(Float discountPercent) {
 		this.discountPercent = discountPercent;
-		this.discountedPrice = qunatityKg * priceRsPerKg * ((100 - this.discountPercent)/100);
+		this.discountedPrice = quantityKg * priceRsPerKg * ((100 - this.discountPercent)/100);
 	}
 	
 	public float getDiscountedPrice() {
@@ -52,12 +60,12 @@ public class PurchasedProduct {
 		return discountPercent;
 	}
 
-	public Float getQunatityKg() {
-		return qunatityKg;
+	public Float getQuantityKg() {
+		return quantityKg;
 	}
 
 	public float getPrice() {
-		return qunatityKg * priceRsPerKg;
+		return quantityKg * priceRsPerKg;
 	}
 	
 }
