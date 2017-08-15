@@ -3,22 +3,22 @@ package com.freeorg.checkoutCounter.domain;
 public enum Category {
 	A {
 		@Override
-		public Float getDiscountPercent() {
+		public Float getApplicableTaxPercent() {
 			return 10.0f;
 		}
 	},
 	B {
 		@Override
-		public Float getDiscountPercent() {
+		public Float getApplicableTaxPercent() {
 			return 20.0f;
 		}
 	},
 	C{
 		@Override
-		public Float getDiscountPercent() {
+		public Float getApplicableTaxPercent() {
 			return 0.0f;
 		}
 	};
 	
-	public abstract Float getDiscountPercent();
+	public abstract Float getApplicableTaxPercent();
 }

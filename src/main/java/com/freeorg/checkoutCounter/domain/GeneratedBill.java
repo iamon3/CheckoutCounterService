@@ -6,30 +6,30 @@ import java.util.Set;
 public class GeneratedBill {
 
 	private Set<PurchasedProduct> purchasedProductSet = new HashSet<>();
-	private float totalBillAmountAfterDiscount = 0.0f;
-	private float totalBillAmountBeforeDiscount = 0.0f;
-	private float discountPercent;
+	private float totalBillAmountAfterTax = 0.0f;
+	private float totalBillAmountBeforeTax = 0.0f;
+	private float totalTaxPercent;
 	
-	public float getTotalBillAmountBeforeDiscount() {
-		return totalBillAmountBeforeDiscount;
+	public float getTotalBillAmountBeforeTax() {
+		return totalBillAmountBeforeTax;
 	}
 
 	public void addPurchasedProduct(PurchasedProduct purchasedProduct) {
 		purchasedProductSet.add(purchasedProduct);
-		this.totalBillAmountBeforeDiscount += purchasedProduct.getPrice();
-		this.totalBillAmountAfterDiscount += purchasedProduct.getDiscountedPrice();
-		this.discountPercent = ((totalBillAmountBeforeDiscount -totalBillAmountAfterDiscount)/ totalBillAmountBeforeDiscount)*100;
+		this.totalBillAmountBeforeTax += purchasedProduct.getPriceBeforeTax();
+		this.totalBillAmountAfterTax += purchasedProduct.getPriceAfterTax();
+		this.totalTaxPercent = ((totalBillAmountAfterTax - totalBillAmountBeforeTax)/ totalBillAmountBeforeTax)*100;
 	}
 
-	public float getDiscountPercent() {
-		return discountPercent;
+	public float getTotalTaxPercent() {
+		return totalTaxPercent;
 	}
 
 	public Set<PurchasedProduct> getPurchasedProductSet() {
 		return purchasedProductSet;
 	}
 
-	public float gettotalBillAmountAfterDiscount() {
-		return totalBillAmountAfterDiscount;
+	public float getTotalBillAmountAfterTax() {
+		return totalBillAmountAfterTax;
 	}
 }

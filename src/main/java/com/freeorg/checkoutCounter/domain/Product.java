@@ -51,8 +51,8 @@ public class Product {
 		this.price = priceRsPerKg;
 	}
 	
-	public Float getDiscountPercent() {
-		return this.category.getDiscountPercent();
+	public Float getApplicableTaxPercent() {
+		return this.category.getApplicableTaxPercent();
 	}
 	
 }

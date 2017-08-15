@@ -5,10 +5,10 @@ public class PurchasedProduct {
 	private Long id;
 	private String name;
 	private Float priceRsPerKg;
-	private Float discountPercent;
+	private Float applicableTaxPercent;
 	private Float quantityKg;
 
-	private Float discountedPrice;
+	private Float priceAfterTax;
 	
 	public PurchasedProduct(){		
 	}
@@ -35,13 +35,13 @@ public class PurchasedProduct {
 		this.priceRsPerKg = priceRsPerKg;
 	}
 	
-	public void setDiscountPercent(Float discountPercent) {
-		this.discountPercent = discountPercent;
-		this.discountedPrice = quantityKg * priceRsPerKg * ((100 - this.discountPercent)/100);
+	public void setApplicableTaxPercent(Float applicableTaxPercent) {
+		this.applicableTaxPercent = applicableTaxPercent;
+		this.priceAfterTax = getPriceBeforeTax() * ((100 + this.applicableTaxPercent)/100);
 	}
 	
-	public float getDiscountedPrice() {
-		return this.discountedPrice;
+	public float getPriceAfterTax() {
+		return this.priceAfterTax;
 	}
 
 	public void setName(String name) {
@@ -56,15 +56,15 @@ public class PurchasedProduct {
 		return priceRsPerKg;
 	}
 
-	public Float getDiscountPercent() {
-		return discountPercent;
+	public Float getApplicableTaxPercent() {
+		return applicableTaxPercent;
 	}
 
 	public Float getQuantityKg() {
 		return quantityKg;
 	}
 
-	public float getPrice() {
+	public float getPriceBeforeTax() {
 		return quantityKg * priceRsPerKg;
 	}
 	

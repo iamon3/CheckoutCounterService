@@ -26,7 +26,7 @@ public class CheckoutCounterService {
 			Product product = productRepository.findOne(purchasedProduct.getId());
 			purchasedProduct.setName(product.getName());
 			purchasedProduct.setPrice(product.getPrice());
-			purchasedProduct.setDiscountPercent(product.getDiscountPercent());
+			purchasedProduct.setApplicableTaxPercent(product.getApplicableTaxPercent());
 			generatedBill.addPurchasedProduct(purchasedProduct);			
 		}		
 		return generatedBill;

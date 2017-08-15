@@ -55,7 +55,7 @@ public class CheckoutCounterControllerTest {
 				.andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8)).andReturn();
 
-		String expected = "{\"purchasedProductSet\": [],\"totalBillAmountAfterDiscount\": 0,\"totalBillAmountBeforeDiscount\": 0,\"discountPercent\": 0}";
+		String expected = "{\"purchasedProductSet\": [],\"totalBillAmountAfterTax\": 0,\"totalBillAmountBeforeTax\": 0,\"totalTaxPercent\": 0}";
 
 		JSONAssert.assertEquals(expected, result.getResponse()
 				.getContentAsString(), false);

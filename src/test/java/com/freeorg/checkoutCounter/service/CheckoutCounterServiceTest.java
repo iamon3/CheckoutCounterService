@@ -40,9 +40,9 @@ public class CheckoutCounterServiceTest {
 		GeneratedBill generatedBill = checkoutCounterService.generateBill(mockPurchasedProductsList);
 		
 		// Then
-		Assert.assertEquals(30.0, generatedBill.getTotalBillAmountBeforeDiscount(), 0.0);
-		Assert.assertEquals(25.0, generatedBill.gettotalBillAmountAfterDiscount(), 0.0);
-		Assert.assertEquals(16.67,generatedBill.getDiscountPercent(),0.01);
+		Assert.assertEquals(30.0, generatedBill.getTotalBillAmountBeforeTax(), 0.0);
+		Assert.assertEquals(35.0, generatedBill.getTotalBillAmountAfterTax(), 0.0);
+		Assert.assertEquals(16.67,generatedBill.getTotalTaxPercent(),0.01);
 		Assert.assertTrue(2 == generatedBill.getPurchasedProductSet().size());
 	}
 	
