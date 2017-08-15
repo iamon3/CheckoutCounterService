@@ -85,21 +85,21 @@ Sample HTTP response
                      "id":1,
                      "name":"Sugar",
                      "priceRsPerKg":10.0,
-                     "discountPercent":10.0,
+                     "applicableTaxPercent":10.0,
                      "quantityKg":1.0,
-                     "discountedPrice":9.0,
-                     "price":10.0
+                     "priceAfterTax":11.0,
+                     "priceBeforeTax":10.0
                     }, 
                     {   
                       "id":3,
                       "name":"Rice",
                       "priceRsPerKg":10.0,
-                      "discountPercent":20.0,
+                      "applicableTaxPercent":20.0,
                       "quantityKg":2.0,
-                      "discountedPrice":16.0,
-                      "price":20.0
+                      "priceAfterTax":24.0,
+                      "priceBeforeTax":20.0
                     }],
-           "totalBillAmountAfterDiscount":25.0,
-           "totalBillAmountBeforeDiscount":30.0,
-           "discountPercent":16.666668
+           "totalBillAmountAfterTax":35.0,
+           "totalBillAmountBeforeTax":30.0,
+           "totalTaxPercent":16.666668
          }
